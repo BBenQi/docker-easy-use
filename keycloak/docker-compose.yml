@@ -29,3 +29,10 @@ services:
         - 8080:8080
       depends_on:
         - mysql
+
+
+
+# keycloak默认开启了https登陆校验，需要先关闭
+# docker exec -it <container id> bin/bash
+# /opt/jboss/keycloak/bin/kcadm.sh config credentials --server http://localhost:8080/auth --realm master --user admin --password 123456a?
+# ./kcadm.sh update realms/master -s sslRequired=NONE
